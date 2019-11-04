@@ -1,17 +1,10 @@
-disabled_rules: # 禁用指定的规则
-  - trailing_whitespace
-  - unused_closure_parameter
-  - identifier_name
-  - control_statement
-opt_in_rules: # 启用指定的规则
-  - empty_count
-  - missing_docs
-  # 可以通过执行如下指令来查找所有可用的规则:
-  # swiftlint rules
-included: # 执行 linting 时包含的路径。如果出现这个 `--path` 会被忽略。
-  - Source
-excluded: # 执行 linting 时忽略的路径。 优先级比 `included` 更高。
-  - Carthage
-  - Pods
-  - Source/ExcludedFolder
-  - Source/ExcludedFile.swift
+disabled_rules:
+ - trailing_whitespace
+ - unused_closure_parameter
+ - identifier_name
+excluded: # 執行 linting 時忽略的路徑。 優先順序比 included 更高。
+ - Pods
+ - Carthage
+min_length: # only min_length
+  error: 4 # only error
+
