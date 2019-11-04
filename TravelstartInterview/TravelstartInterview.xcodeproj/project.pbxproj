@@ -14,6 +14,10 @@
 		098A6BC8236B341E009DABAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098A6BC7236B341E009DABAB /* Assets.xcassets */; };
 		098A6BCB236B341E009DABAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098A6BC9236B341E009DABAB /* LaunchScreen.storyboard */; };
 		098A6BD6236B341F009DABAB /* TravelstartInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BD5236B341F009DABAB /* TravelstartInterviewTests.swift */; };
+		098A6BE723704565009DABAB /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BE623704565009DABAB /* HTTPClient.swift */; };
+		098A6BE923704866009DABAB /* TouristRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BE823704866009DABAB /* TouristRequest.swift */; };
+		098A6BEB237049E8009DABAB /* PhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BEA237049E8009DABAB /* PhotoURL.swift */; };
+		098A6BEE23704A52009DABAB /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BED23704A52009DABAB /* Kingfisher.swift */; };
 		877241FDE947996C0FB8FE44 /* Pods_TravelstartInterview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134CA50DDE2140D76CF2CD9C /* Pods_TravelstartInterview.framework */; };
 		E6BA635306116B99FDC707EF /* Pods_TravelstartInterviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A25AFC5EC5AB782F1A411EF /* Pods_TravelstartInterviewTests.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +44,10 @@
 		098A6BD1236B341F009DABAB /* TravelstartInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelstartInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		098A6BD5236B341F009DABAB /* TravelstartInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelstartInterviewTests.swift; sourceTree = "<group>"; };
 		098A6BD7236B341F009DABAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		098A6BE623704565009DABAB /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		098A6BE823704866009DABAB /* TouristRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristRequest.swift; sourceTree = "<group>"; };
+		098A6BEA237049E8009DABAB /* PhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURL.swift; sourceTree = "<group>"; };
+		098A6BED23704A52009DABAB /* Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingfisher.swift; sourceTree = "<group>"; };
 		134CA50DDE2140D76CF2CD9C /* Pods_TravelstartInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelstartInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD2645D9AF9EA86257C5BE3 /* Pods-TravelstartInterviewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelstartInterviewTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelstartInterviewTests/Pods-TravelstartInterviewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A25AFC5EC5AB782F1A411EF /* Pods_TravelstartInterviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelstartInterviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +101,7 @@
 			children = (
 				098A6BBE236B341C009DABAB /* AppDelegate.swift */,
 				098A6BC0236B341C009DABAB /* SceneDelegate.swift */,
+				098A6BEC23704A44009DABAB /* Third Party Wrapper */,
 				098A6BE2237040DD009DABAB /* ViewModel */,
 				098A6BE1237040C7009DABAB /* Model */,
 				098A6BE0237040BC009DABAB /* View */,
@@ -124,6 +133,9 @@
 		098A6BE1237040C7009DABAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				098A6BE623704565009DABAB /* HTTPClient.swift */,
+				098A6BE823704866009DABAB /* TouristRequest.swift */,
+				098A6BEA237049E8009DABAB /* PhotoURL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +145,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		098A6BEC23704A44009DABAB /* Third Party Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BED23704A52009DABAB /* Kingfisher.swift */,
+			);
+			path = "Third Party Wrapper";
 			sourceTree = "<group>";
 		};
 		4F91C96CFFC412A2BDFB8A90 /* Pods */ = {
@@ -342,7 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				098A6BC3236B341C009DABAB /* ViewController.swift in Sources */,
+				098A6BE923704866009DABAB /* TouristRequest.swift in Sources */,
+				098A6BEE23704A52009DABAB /* Kingfisher.swift in Sources */,
 				098A6BBF236B341C009DABAB /* AppDelegate.swift in Sources */,
+				098A6BE723704565009DABAB /* HTTPClient.swift in Sources */,
+				098A6BEB237049E8009DABAB /* PhotoURL.swift in Sources */,
 				098A6BC1236B341C009DABAB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
