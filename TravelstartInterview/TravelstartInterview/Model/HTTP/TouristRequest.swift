@@ -10,7 +10,7 @@ import Foundation
 
 class  TouristRequest: Request {
 
-    var headers: [String : String]? {
+    var headers: [ String: String]? {
         
         return nil
     }
@@ -52,5 +52,4 @@ class  TouristRequest: Request {
         return urlComponent.url!
     }
 
-    
 }

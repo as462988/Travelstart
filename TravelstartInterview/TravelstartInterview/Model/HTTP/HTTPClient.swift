@@ -42,19 +42,19 @@ protocol Request {
 class HTTPClient {
 
     func request(
-            _ stRequest: Request,
-            completion: @escaping (Result<Data>) -> Void
-        ) {
-
+            _ request: Request,
+            _ completion: @escaping (Result<Data, HTTPClientError>) -> Void) {
+        
             URLSession.shared.dataTask(
-                with: makeRequest(stRequest),
+                with: makeRequest(request),
                 completionHandler: { (data, response, error) in
 
                 guard error == nil else {
 
-                    return completion(Result.failure(error!))
+                    return completion(.failure(HTTPClientError.unexpectedError))
+                   
                 }
-                    
+
                 // swiftlint:disable force_cast
                 let httpResponse = response as! HTTPURLResponse
                 // swiftlint:enable force_cast
@@ -64,19 +64,19 @@ class HTTPClient {
 
                 case 200..<300:
 
-                    completion(Result.success(data!))
+                    completion(.success(data!))
 
                 case 400..<500:
 
-                    completion(Result.failure(HTTPClientError.clientError(data!)))
+                    completion(.failure(HTTPClientError.clientError(data!)))
 
                 case 500..<600:
 
-                    completion(Result.failure(HTTPClientError.serverError))
+                    completion(.failure(HTTPClientError.serverError))
 
                 default: return
 
-                    completion(Result.failure(HTTPClientError.unexpectedError))
+                    completion(.failure(HTTPClientError.unexpectedError))
                 }
 
             }).resume()
@@ -96,4 +96,3 @@ class HTTPClient {
 
         }
     }
-
