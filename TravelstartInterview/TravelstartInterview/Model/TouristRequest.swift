@@ -8,7 +8,27 @@
 
 import Foundation
 
+enum QueryName: String {
+    
+    case scope
+    
+    case rid
+    
+    case limit
+    
+    case offset
+}
+
 class TouristRequest: Request {
+    
+    var offset: Int
+    
+    var limit: Int
+    
+    init(offset: Int, limit: Int ) {
+        self.offset = offset
+        self.limit = limit
+    }
 
     var headers: [ String: String]? {
         
@@ -21,9 +41,11 @@ class TouristRequest: Request {
         
     }
     
-    var method: String = HTTPMethod.GET.rawValue
-    
-    var offset = 0
+    var method: String {
+        
+        return HTTPMethod.GET.rawValue
+        
+    }
     
     var endPoint: URL {
         
@@ -37,17 +59,17 @@ class TouristRequest: Request {
         
         urlComponent.queryItems = [
         
-            URLQueryItem(name: "scope", value: "resourceAquire"),
+            URLQueryItem(name: QueryName.scope.rawValue, value: "resourceAquire"),
             
-            URLQueryItem(name: "rid", value: "36847f3f-deff-4183-a5bb-800737591de5"),
+            URLQueryItem(name: QueryName.rid.rawValue, value: Bundle.ValueForString(key: Constant.touristRidValue)),
             
-            URLQueryItem(name: "limit", value: "10"),
+            URLQueryItem(name: QueryName.limit.rawValue, value: String(limit)),
             
-            URLQueryItem(name: "offset", value: String(offset))
+            URLQueryItem(name: QueryName.offset.rawValue, value: String(offset))
         
         ]
         
-        offset += 10
+        offset += limit
                       
         return urlComponent.url!
     }

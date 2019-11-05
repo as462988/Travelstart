@@ -9,7 +9,7 @@ target 'TravelstartInterview' do
   pod 'Kingfisher'
   pod 'SwiftLint'
   pod 'JonAlert'
-  pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'CRRefresh'
   
   target 'TravelstartInterviewTests' do
     inherit! :search_paths

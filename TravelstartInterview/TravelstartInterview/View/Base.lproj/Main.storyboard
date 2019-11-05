@@ -130,7 +130,7 @@
                                     <constraint firstItem="5RH-fC-2a3" firstAttribute="leading" secondItem="Ui7-Tp-f9E" secondAttribute="leading" id="QlO-0G-mCf"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="mainTouristViewTabelView" destination="5RH-fC-2a3" id="t78-xq-GyS"/>
+                                    <outlet property="mainTouristViewTableView" destination="5RH-fC-2a3" id="t78-xq-GyS"/>
                                 </connections>
                             </view>
                         </subviews>

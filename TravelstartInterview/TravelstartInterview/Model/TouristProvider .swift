@@ -8,13 +8,6 @@
 
 import Foundation
 
-struct SuccessParser<T: Codable>: Codable {
-
-    let data: T
-
-    let paging: Int?
-}
-
 class TouristProvider {
     
     let decoder = JSONDecoder()
