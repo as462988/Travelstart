@@ -32,16 +32,13 @@ class DetailPageHeaderView: UIView, UIScrollViewDelegate {
             pageScrollView.contentSize.height = fullScreen.height / 3
             pageScrollView.contentSize.width = fullScreen.width * CGFloat(number)
             pageScrollView.isPagingEnabled = true
-            pageScrollView.translatesAutoresizingMaskIntoConstraints = false
             addSubview(pageScrollView)
             
-            NSLayoutConstraint.activate([
-                pageScrollView.topAnchor.constraint(equalTo: topAnchor),
-                pageScrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-                pageScrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                pageScrollView.trailingAnchor.constraint(equalTo: trailingAnchor)
-            ])
-            
+            pageScrollView.anchor(top: self.topAnchor,
+                                  leading: self.leadingAnchor,
+                                  bottom: self.bottomAnchor,
+                                  trailing: self.trailingAnchor)
+
         }
         
         // MARK: - showImage
@@ -56,11 +53,11 @@ class DetailPageHeaderView: UIView, UIScrollViewDelegate {
                 showImageView.contentMode = .scaleAspectFill
                 showImageView.clipsToBounds = true
                 
-                showImageView.translatesAutoresizingMaskIntoConstraints = false
-
+                showImageView.constrainWidth(constant: fullScreen.width)
+                showImageView.constrainHeight(constant: pageScrollView.contentSize.height)
+                
                 putImageStackView.addArrangedSubview(showImageView)
-                showImageView.widthAnchor.constraint(equalToConstant: fullScreen.width).isActive = true
-                showImageView.heightAnchor.constraint(equalToConstant: pageScrollView.contentSize.height).isActive = true
+
             }
           
             pageScrollView.addSubview(putImageStackView)
@@ -74,10 +71,11 @@ class DetailPageHeaderView: UIView, UIScrollViewDelegate {
             pageControl.currentPageIndicatorTintColor = .darkGray
             pageControl.pageIndicatorTintColor = .white
             self.addSubview(pageControl)
-            pageControl.translatesAutoresizingMaskIntoConstraints = false
-            pageControl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-            pageControl.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-
+            
+            let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+            
+            pageControl.anchor(top: nil, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: nil, padding: padding, size: .zero)
+            
             pageControl.addTarget(self, action: #selector (pageChanged(sender:)), for: .valueChanged)
             
         }
