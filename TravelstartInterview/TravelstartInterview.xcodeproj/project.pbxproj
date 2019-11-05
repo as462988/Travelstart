@@ -22,6 +22,7 @@
 		098A6BFA237152CD009DABAB /* MainTouristListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BF9237152CD009DABAB /* MainTouristListView.swift */; };
 		098A6BFC237155B5009DABAB /* MainTouristImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BFB237155B5009DABAB /* MainTouristImageCollectionViewCell.swift */; };
 		098A6BFE2371574B009DABAB /* TouristProvider .swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BFD2371574B009DABAB /* TouristProvider .swift */; };
+		098A6C0023717AE5009DABAB /* JGProgressHUDWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BFF23717AE5009DABAB /* JGProgressHUDWrapper.swift */; };
 		877241FDE947996C0FB8FE44 /* Pods_TravelstartInterview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134CA50DDE2140D76CF2CD9C /* Pods_TravelstartInterview.framework */; };
 		E6BA635306116B99FDC707EF /* Pods_TravelstartInterviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A25AFC5EC5AB782F1A411EF /* Pods_TravelstartInterviewTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		098A6BF9237152CD009DABAB /* MainTouristListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTouristListView.swift; sourceTree = "<group>"; };
 		098A6BFB237155B5009DABAB /* MainTouristImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTouristImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		098A6BFD2371574B009DABAB /* TouristProvider .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TouristProvider .swift"; sourceTree = "<group>"; };
+		098A6BFF23717AE5009DABAB /* JGProgressHUDWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGProgressHUDWrapper.swift; sourceTree = "<group>"; };
 		134CA50DDE2140D76CF2CD9C /* Pods_TravelstartInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelstartInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD2645D9AF9EA86257C5BE3 /* Pods-TravelstartInterviewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelstartInterviewTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelstartInterviewTests/Pods-TravelstartInterviewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A25AFC5EC5AB782F1A411EF /* Pods_TravelstartInterviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelstartInterviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				098A6BED23704A52009DABAB /* Kingfisher.swift */,
+				098A6BFF23717AE5009DABAB /* JGProgressHUDWrapper.swift */,
 			);
 			path = "Third Party Wrapper";
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				098A6BE923704866009DABAB /* TouristRequest.swift in Sources */,
 				098A6BF423705969009DABAB /* MainTouristTableViewCell.swift in Sources */,
 				098A6BEE23704A52009DABAB /* Kingfisher.swift in Sources */,
+				098A6C0023717AE5009DABAB /* JGProgressHUDWrapper.swift in Sources */,
 				098A6BF023704C28009DABAB /* TouristListData.swift in Sources */,
 				098A6BFC237155B5009DABAB /* MainTouristImageCollectionViewCell.swift in Sources */,
 				098A6BBF236B341C009DABAB /* AppDelegate.swift in Sources */,

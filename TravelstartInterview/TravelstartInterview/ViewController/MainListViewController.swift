@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Network
 
 class MainListViewController: UIViewController {
     
@@ -23,8 +24,8 @@ class MainListViewController: UIViewController {
             mainListView.mainTouristViewTabelView.reloadData()
         }
     }
-    
-    var touristListImageData: [[String]] = []
+        
+    let monitor = NWPathMonitor()
     
     let touristProvider = TouristProvider()
     
@@ -32,14 +33,8 @@ class MainListViewController: UIViewController {
         super.viewDidLoad()
         
         fetchData()
-//        setupNavigationBar()
+        checkNetwork()
     }
-    
-//    func setupNavigationBar() {
-//
-//        navigationItem.title = "台北市熱門景點"
-//
-//    }
     
     func fetchData() {
         
@@ -59,6 +54,23 @@ class MainListViewController: UIViewController {
                 
             }
         }
+    }
+    
+    func checkNetwork() {
+        
+        monitor.pathUpdateHandler = { path in
+            
+             if path.status == .satisfied {
+                
+                print("connected")
+                
+             } else {
+                
+                print("no connection")
+                
+             }
+          }
+          monitor.start(queue: DispatchQueue.global())
     }
 
 }
