@@ -38,6 +38,8 @@ class MainTouristTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setupCollectionView(collectionView: self.imageCollectionView)
    
     }
 
@@ -53,9 +55,9 @@ class MainTouristTableViewCell: UITableViewCell {
         infoLabel.text = info
     }
     
-    func setupCollectionView(collectionView: UICollectionView, tag: Int) {
-        
-        collectionView.tag = tag
+    func setupCollectionView(collectionView: UICollectionView) {
+
+        collectionView.contentInset.right = 12
         
         collectionView.reloadData()
         

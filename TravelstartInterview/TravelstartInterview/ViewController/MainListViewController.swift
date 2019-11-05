@@ -21,12 +21,12 @@ class MainListViewController: UIViewController {
     }
     
     var touristListData: [TouristListData] = [] {
-       
+        
         didSet {
             mainListView.mainTouristViewTabelView.reloadData()
         }
     }
-        
+    
     let monitor = NWPathMonitor()
     
     let touristProvider = TouristProvider()
@@ -51,11 +51,11 @@ class MainListViewController: UIViewController {
                 self?.touristListData += data.result.results
                 
             case .failure(let error):
-                                
-//                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
+                
+                //                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
                 
                 print("Error:\(error)")
-
+                
             }
         }
     }
@@ -64,25 +64,25 @@ class MainListViewController: UIViewController {
         
         monitor.pathUpdateHandler = { [weak self] path in
             
-             if path.status == .satisfied {
+            if path.status == .satisfied {
                 
-//                ProgressHUD.showSuccess()
+                //                ProgressHUD.showSuccess()
                 print("connected")
                 
-             } else {
+            } else {
                 
-//                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
+                //                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
                 
                 print("no connection")
                 
-             }
-          }
-          monitor.start(queue: DispatchQueue.global())
+            }
+        }
+        monitor.start(queue: DispatchQueue.global())
     }
-
+    
 }
 
-extension MainListViewController: MainTouristListViewDelegate, MainTouristTableViewCellDelegate {
+extension MainListViewController: MainTouristListViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return touristListData.count
@@ -91,7 +91,7 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 1
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,17 +100,16 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
             withIdentifier: String(describing: MainTouristTableViewCell.self),
             for: indexPath) as? MainTouristTableViewCell else {
                 
-            return UITableViewCell()
+                return UITableViewCell()
                 
         }
         
-        mainCell.setValue(title: touristListData[indexPath.row].title,
-                          info: touristListData[indexPath.row].introduction)
+        mainCell.setValue(title: touristListData[indexPath.section].title,
+                          info: touristListData[indexPath.section].introduction)
         
         mainCell.delegate = self
-        mainCell.setupCollectionView(
-            collectionView: mainCell.imageCollectionView,
-            tag: indexPath.row)
+        mainCell.imageCollectionView.tag = indexPath.section
+        mainCell.imageCollectionView.reloadData()
         
         return mainCell
     }
@@ -121,7 +120,7 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
         
         headerView.backgroundColor = .lightGray
         headerView.alpha = 0.5
-
+        
         return headerView
     }
     
@@ -129,10 +128,14 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
         
         return 10
     }
+}
+
+extension MainListViewController: MainTouristTableViewCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return touristListImageData.count
+        
         return touristListData[section].photoURL.count
+
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -143,14 +146,22 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
                 describing: MainTouristImageCollectionViewCell.self),
             for: indexPath) as? MainTouristImageCollectionViewCell else {
                 
-            return UICollectionViewCell()
+                return UICollectionViewCell()
         }
-        
-        mainImageCell.imageView.loadImage(touristListData[indexPath.section].photoURL[indexPath.row])
-        
-//        mainImageCell.imageView.loadImage(touristListImageData[collectionView.tag][indexPath.row])
+        mainImageCell.imageView.loadImage(touristListData[collectionView.tag].photoURL[indexPath.row])
         
         return mainImageCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 8
     }
     
 }
