@@ -13,9 +13,26 @@ protocol MainTouristListViewDelegate: UITableViewDelegate, UITableViewDataSource
 }
 
 class MainTouristListView: UIView {
-
- @IBOutlet weak var mainTouristViewTabelView: UITableView!
     
+    @IBOutlet weak var mainTouristViewTabelView: UITableView! {
+        
+        didSet {
+            
+            mainTouristViewTabelView.delegate = self.delegate
+            mainTouristViewTabelView.dataSource = self.delegate
+            
+        }
+    }
     
-
+    weak var delegate: MainTouristListViewDelegate? {
+        
+        didSet {
+            
+            guard let mainTouristViewTabelView = mainTouristViewTabelView else { return }
+            
+            mainTouristViewTabelView.delegate = self.delegate
+            mainTouristViewTabelView.dataSource = self.delegate
+        }
+    }
+    
 }

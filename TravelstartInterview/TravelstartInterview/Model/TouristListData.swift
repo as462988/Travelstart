@@ -8,17 +8,14 @@
 
 import Foundation
 
-struct DataResult: Codable {
-   
-    let limit: Int
-    
-    let offset: Int
-    
-    let count: Int
-    
-    let sort: String
+struct TouristDataResults: Codable {
     
     let results: [TouristListData]
+}
+
+struct TouristResult: Codable {
+    
+    let result: TouristDataResults
 }
 
 struct TouristListData: Codable {
@@ -53,4 +50,26 @@ struct TouristListData: Codable {
         case photoFile = "file"
     }
     
+}
+
+struct PhotoURL {
+    
+    static func separate(fileName: String) -> [String] {
+
+        let photoArray = fileName.components(separatedBy: "http:")
+        
+        var newPhotoArray = [String]()
+
+        for number in 1..<photoArray.count {
+            
+            if photoArray[number].contains(".mp3") || photoArray[number].contains(".flv") {
+
+                continue
+            }
+                
+            newPhotoArray.append("http:" + photoArray[number])
+        }
+
+        return newPhotoArray
+    }
 }
