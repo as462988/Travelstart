@@ -26,8 +26,6 @@ struct TouristListData: Codable {
     
     let address: String
     
-    let memoTime: String?
-    
     let info: String?
     
     let photoFile: String
@@ -44,8 +42,6 @@ struct TouristListData: Codable {
         case introduction = "xbody"
         
         case address, info
-        
-        case memoTime = "MEMO_TIME"
         
         case photoFile = "file"
     }
@@ -66,8 +62,6 @@ struct PhotoURL {
 
                 newPhotoArray.append("http:" + photoArray[number])
             }
-//
-//            newPhotoArray.append("http:" + photoArray[number])
         }
 
         return newPhotoArray

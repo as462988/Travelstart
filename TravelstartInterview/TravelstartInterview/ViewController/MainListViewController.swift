@@ -11,7 +11,7 @@ import Network
 
 class MainListViewController: UIViewController {
     
-    var errorMessage: String = "目前讀取不到資料，請稍後再試"
+    var errorMessage: String = "目前網路異常，請確認網路後再使用"
     
     @IBOutlet weak var mainListView: MainTouristListView! {
         
@@ -29,32 +29,35 @@ class MainListViewController: UIViewController {
     
     let monitor = NWPathMonitor()
     
+    var networkIsSuccess: Bool = false
+    
     let touristProvider = TouristProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchData()
         checkNetwork()
+        setupNavgationBar()
     }
     
     func fetchData() {
         
-        let request = TouristRequest()
-        
-        touristProvider.fetchData(request: request) {[weak self] (result) in
+        if networkIsSuccess {
             
-            switch result {
+            let request = TouristRequest()
+            
+            touristProvider.fetchData(request: request) {[weak self] (result) in
                 
-            case.success(let data):
-                
-                self?.touristListData += data.result.results
-                
-            case .failure(let error):
-                
-                //                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
-                
-                print("Error:\(error)")
+                switch result {
+                    
+                case.success(let data):
+                    
+                    self?.touristListData += data.result.results
+                    
+                case .failure:
+                    
+                    JonAlert.showError(message: self?.errorMessage ?? "")
+                }
                 
             }
         }
@@ -66,18 +69,32 @@ class MainListViewController: UIViewController {
             
             if path.status == .satisfied {
                 
-                ProgressHUD.showSuccess()
+                self?.networkIsSuccess = true
+                self?.fetchData()
                 print("connected")
                 
             } else {
                 
-                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
-                
+                JonAlert.showError(message: self?.errorMessage ?? "")
+                self?.networkIsSuccess = false
                 print("no connection")
                 
             }
         }
         monitor.start(queue: DispatchQueue.global())
+    }
+    
+    private func setupNavgationBar() {
+        
+        navigationItem.title = "台北市熱門景點"
+        
+        navigationController?.navigationBar.tintColor = .white
+        
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
     }
     
 }
@@ -126,13 +143,9 @@ extension MainListViewController: MainTouristListViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 10
+        return 8
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: false)
-//    }
-//
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -169,10 +182,11 @@ extension MainListViewController: MainTouristTableViewCellDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let detailVC = storyboard.instantiateViewController(
-            identifier:String(describing: DetailViewController.self)) as? DetailViewController else { return }
+            identifier: String(describing: DetailViewController.self)) as? DetailViewController else { return }
+        
+        detailVC.detailTouristData = self.touristListData[collectionView.tag]
         
         show(detailVC, sender: nil)
-        print("tapImage")
         
     }
     
