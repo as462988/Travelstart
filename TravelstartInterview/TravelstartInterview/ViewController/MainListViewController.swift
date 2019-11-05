@@ -23,7 +23,7 @@ class MainListViewController: UIViewController {
     var touristListData: [TouristListData] = [] {
         
         didSet {
-            mainListView.mainTouristViewTabelView.reloadData()
+            mainListView.mainTouristViewTableView.reloadData()
         }
     }
     
@@ -33,18 +33,36 @@ class MainListViewController: UIViewController {
     
     let touristProvider = TouristProvider()
     
+    var request = TouristRequest(offset: 0, limit: 10)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         checkNetwork()
-        setupNavgationBar()
+        setupNavigationBar()
+        refresh()
+    }
+    
+    func refresh() {
+        
+        guard let mainTableView = mainListView.mainTouristViewTableView else { return }
+        
+        mainTableView.addHeadRefresh {
+            
+            self.touristListData = []
+            self.request = TouristRequest(offset: 0, limit: 10)
+            mainTableView.resetNoMore()
+            self.fetchData()
+        }
+        
+        mainTableView.addFootRefresh {
+            self.fetchData()
+        }
     }
     
     func fetchData() {
         
         if networkIsSuccess {
-            
-            let request = TouristRequest()
             
             touristProvider.fetchData(request: request) {[weak self] (result) in
                 
@@ -52,7 +70,20 @@ class MainListViewController: UIViewController {
                     
                 case.success(let data):
                     
-                    self?.touristListData += data.result.results
+                    if data.result.results.count == self?.touristListData.count {
+                        self?.mainListView.mainTouristViewTableView.noticeNoMoreData()
+                    }
+                    
+                    if data.result.results.count >= 0 {
+                        
+                        self?.touristListData += data.result.results
+                        
+                        DispatchQueue.main.async {
+                            self?.mainListView.mainTouristViewTableView.stopLoadingMore()
+                            
+                        }
+                        
+                    }
                     
                 case .failure:
                     
@@ -84,7 +115,7 @@ class MainListViewController: UIViewController {
         monitor.start(queue: DispatchQueue.global())
     }
     
-    private func setupNavgationBar() {
+    private func setupNavigationBar() {
         
         navigationItem.title = "台北市熱門景點"
         
@@ -157,7 +188,7 @@ extension MainListViewController: MainTouristTableViewCellDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return touristListData[collectionView.tag].photoURL.count
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView,
