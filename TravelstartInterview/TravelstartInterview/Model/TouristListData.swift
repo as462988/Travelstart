@@ -8,7 +8,20 @@
 
 import Foundation
 
-struct TouristCellViewModel: Codable {
+struct DataResult: Codable {
+   
+    let limit: Int
+    
+    let offset: Int
+    
+    let count: Int
+    
+    let sort: String
+    
+    let results: [TouristListData]
+}
+
+struct TouristListData: Codable {
     
     let title: String
     
@@ -40,14 +53,4 @@ struct TouristCellViewModel: Codable {
         case photoFile = "file"
     }
     
-}
-
-struct TouristResults: Codable {
-    
-    let results: [TouristCellViewModel]
-}
-
-struct TouristResult: Codable {
-    
-    let result: TouristResults
 }

@@ -48,7 +48,7 @@ class HTTPClient {
             URLSession.shared.dataTask(
                 with: makeRequest(request),
                 completionHandler: { (data, response, error) in
-
+        
                 guard error == nil else {
 
                     return completion(.failure(HTTPClientError.unexpectedError))

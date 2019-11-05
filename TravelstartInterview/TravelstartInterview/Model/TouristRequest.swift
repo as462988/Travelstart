@@ -8,7 +8,7 @@
 
 import Foundation
 
-class  TouristRequest: Request {
+class TouristRequest: Request {
 
     var headers: [ String: String]? {
         
@@ -43,7 +43,7 @@ class  TouristRequest: Request {
             
             URLQueryItem(name: "limit", value: "10"),
             
-            URLQueryItem(name: "offset", value: "\(offset)")
+            URLQueryItem(name: "offset", value: String(offset))
         
         ]
         
