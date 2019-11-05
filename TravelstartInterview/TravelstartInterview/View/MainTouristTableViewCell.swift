@@ -52,5 +52,13 @@ class MainTouristTableViewCell: UITableViewCell {
         
         infoLabel.text = info
     }
+    
+    func setupCollectionView(collectionView: UICollectionView, tag: Int) {
+        
+        collectionView.tag = tag
+        
+        collectionView.reloadData()
+        
+    }
 
 }

@@ -13,9 +13,7 @@ class MainListViewController: UIViewController {
     @IBOutlet weak var mainListView: MainTouristListView! {
         
         didSet {
-            
             mainListView.delegate = self
-            
         }
     }
     
@@ -34,8 +32,14 @@ class MainListViewController: UIViewController {
         super.viewDidLoad()
         
         fetchData()
-        
+//        setupNavigationBar()
     }
+    
+//    func setupNavigationBar() {
+//
+//        navigationItem.title = "台北市熱門景點"
+//
+//    }
     
     func fetchData() {
         
@@ -49,10 +53,6 @@ class MainListViewController: UIViewController {
                 
                 self?.touristListData += data.result.results
                 
-                print(self?.touristListData.count)
-                print(data.result.results.count)
-                print(data.result.results[1].photoURL)
-                
             case .failure(let error):
                 
                 print("Error:\(error)")
@@ -60,10 +60,11 @@ class MainListViewController: UIViewController {
             }
         }
     }
+
 }
 
 extension MainListViewController: MainTouristListViewDelegate, MainTouristTableViewCellDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return touristListData.count
@@ -83,14 +84,17 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
         mainCell.setValue(title: touristListData[indexPath.row].title,
                           info: touristListData[indexPath.row].introduction)
         
-//        mainCell.setValue(title: "aaaa", info: "aaassdeeee")
-        
         mainCell.delegate = self
+        mainCell.setupCollectionView(
+            collectionView: mainCell.imageCollectionView,
+            tag: indexPath.row)
+        
         return mainCell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return touristListImageData.count
+//        return touristListImageData.count
+        return touristListData[section].photoURL.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -104,7 +108,9 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
             return UICollectionViewCell()
         }
         
-        mainImageCell.imageView.loadImage(touristListImageData[indexPath.section][indexPath.row])
+        mainImageCell.imageView.loadImage(touristListData[indexPath.section].photoURL[indexPath.row])
+        
+//        mainImageCell.imageView.loadImage(touristListImageData[collectionView.tag][indexPath.row])
         
         return mainImageCell
     }
