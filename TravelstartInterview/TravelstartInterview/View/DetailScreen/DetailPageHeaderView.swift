@@ -29,7 +29,7 @@ class DetailPageHeaderView: UIView, UIScrollViewDelegate {
         // MARK: - ScrollLView
         func setupScrollLViewLayout(number: Int) {
             
-            pageScrollView.contentSize.height = 500
+            pageScrollView.contentSize.height = fullScreen.height / 3
             pageScrollView.contentSize.width = fullScreen.width * CGFloat(number)
             pageScrollView.isPagingEnabled = true
             pageScrollView.translatesAutoresizingMaskIntoConstraints = false
