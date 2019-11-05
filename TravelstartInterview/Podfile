@@ -8,7 +8,7 @@ target 'TravelstartInterview' do
   # Pods for TravelstartInterview
   pod 'Kingfisher'
   pod 'SwiftLint'
-  pod 'JGProgressHUD'
+  pod 'JonAlert'
   pod 'Alamofire', '~> 5.0.0-rc.3'
   
   target 'TravelstartInterviewTests' do
