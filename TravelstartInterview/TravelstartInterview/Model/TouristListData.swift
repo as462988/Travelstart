@@ -8,7 +8,17 @@
 
 import Foundation
 
-struct TouristCellViewModel: Codable {
+struct TouristDataResults: Codable {
+    
+    let results: [TouristListData]
+}
+
+struct TouristResult: Codable {
+    
+    let result: TouristDataResults
+}
+
+struct TouristListData: Codable {
     
     let title: String
     
@@ -42,12 +52,24 @@ struct TouristCellViewModel: Codable {
     
 }
 
-struct TouristResults: Codable {
+struct PhotoURL {
     
-    let results: [TouristCellViewModel]
-}
+    static func separate(fileName: String) -> [String] {
 
-struct TouristResult: Codable {
-    
-    let result: TouristResults
+        let photoArray = fileName.components(separatedBy: "http:")
+        
+        var newPhotoArray = [String]()
+
+        for number in 1..<photoArray.count {
+            
+            if photoArray[number].contains(".jpg") || photoArray[number].contains(".JPG") {
+
+                newPhotoArray.append("http:" + photoArray[number])
+            }
+//
+//            newPhotoArray.append("http:" + photoArray[number])
+        }
+
+        return newPhotoArray
+    }
 }

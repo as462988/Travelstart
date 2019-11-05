@@ -8,11 +8,17 @@
 
 import Foundation
 
+enum Result<T> {
+    
+    case success(T)
+    
+    case failure(Error)
+}
+
 enum HTTPMethod: String {
     
     case GET
     
-    case POST
 }
 
 enum HTTPClientError: Error {
@@ -40,15 +46,23 @@ protocol Request {
 }
 
 class HTTPClient {
+    
+    private init() { }
+    
+    static let shared = HTTPClient()
+
+    private let decoder = JSONDecoder()
+
+    private let encoder = JSONEncoder()
 
     func request(
             _ request: Request,
-            _ completion: @escaping (Result<Data, HTTPClientError>) -> Void) {
+            _ completion: @escaping (Result<Data>) -> Void) {
         
             URLSession.shared.dataTask(
                 with: makeRequest(request),
                 completionHandler: { (data, response, error) in
-
+        
                 guard error == nil else {
 
                     return completion(.failure(HTTPClientError.unexpectedError))
@@ -82,17 +96,17 @@ class HTTPClient {
             }).resume()
         }
 
-        private func makeRequest(_ request: Request) -> URLRequest {
+    private func makeRequest(_ request: Request) -> URLRequest {
 
-            var urlRequest = URLRequest(url: request.endPoint)
+        var urlRequest = URLRequest(url: request.endPoint)
 
-            urlRequest.allHTTPHeaderFields = request.headers
+        urlRequest.allHTTPHeaderFields = request.headers
 
-            urlRequest.httpMethod = request.method
+        urlRequest.httpMethod = request.method
 
-            urlRequest.httpBody = request.body
-                
-            return urlRequest
+        urlRequest.httpBody = request.body
+            
+        return urlRequest
 
-        }
     }
+}
