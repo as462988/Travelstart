@@ -36,6 +36,7 @@ class MainListViewController: UIViewController {
         
         fetchData()
         checkNetwork()
+        setupNavgationBar()
     }
     
     func fetchData() {
@@ -78,6 +79,19 @@ class MainListViewController: UIViewController {
             }
         }
         monitor.start(queue: DispatchQueue.global())
+    }
+    
+    private func setupNavgationBar() {
+        
+        navigationItem.title = "台北市熱門景點"
+        
+        navigationController?.navigationBar.tintColor = .white
+        
+        navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
     }
     
 }
@@ -129,10 +143,6 @@ extension MainListViewController: MainTouristListViewDelegate {
         return 10
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: false)
-//    }
-//
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -170,6 +180,9 @@ extension MainListViewController: MainTouristTableViewCellDelegate {
         
         guard let detailVC = storyboard.instantiateViewController(
             identifier:String(describing: DetailViewController.self)) as? DetailViewController else { return }
+        
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
         
         show(detailVC, sender: nil)
         print("tapImage")

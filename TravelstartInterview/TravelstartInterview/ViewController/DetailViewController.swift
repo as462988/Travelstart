@@ -9,12 +9,13 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var detailTouristData: TouristListData?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-        // Do any additional setup after loading the view.
     }
-    
 
 }

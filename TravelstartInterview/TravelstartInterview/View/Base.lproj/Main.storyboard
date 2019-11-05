@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.28188427401260591" green="0.7452399730682373" blue="0.90855059069646915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-106" y="199"/>
         </scene>
-        <!--台北市熱門景點-->
+        <!--Main List View Controller-->
         <scene sceneID="QZu-8k-g7X">
             <objects>
                 <viewController id="QuX-UZ-Aep" customClass="MainListViewController" customModule="TravelstartInterview" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="puG-Lc-ouT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="台北市熱門景點" id="5yw-A2-Z5j"/>
+                    <navigationItem key="navigationItem" id="5yw-A2-Z5j"/>
                     <connections>
                         <outlet property="mainListView" destination="Ui7-Tp-f9E" id="8XL-oL-Ghj"/>
                     </connections>
