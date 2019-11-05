@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
-  - JGProgressHUD (2.0.4)
+  - JonAlert (1.0.0)
   - Kingfisher (5.8.1):
     - Kingfisher/Core (= 5.8.1)
   - Kingfisher/Core (5.8.1)
@@ -8,23 +8,23 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
-  - JGProgressHUD
+  - JonAlert
   - Kingfisher
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - JGProgressHUD
+    - JonAlert
     - Kingfisher
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
-  JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
+  JonAlert: a83b374ccbf1a14aeb25537d5a3cbe957aac1c2b
   Kingfisher: de969e451c81ca6c07a454bc36fea84b8b08c3c7
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: 367e6fed8889aec2f12765994515189e04db8e51
+PODFILE CHECKSUM: 987fc86c869f5bff5aec6a012ee28dd1925c2662
 
 COCOAPODS: 1.8.1

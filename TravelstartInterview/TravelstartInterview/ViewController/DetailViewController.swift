@@ -31,6 +31,15 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard let imageData = detailTouristData?.photoURL else { return nil }
+        
+        return DetailPageHeaderView(
+            numberOfImage: imageData.count,
+            images: imageData)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableTitleName.count
     }
@@ -43,30 +52,30 @@ extension DetailViewController: UITableViewDataSource {
         
         guard let data = detailTouristData else { return UITableViewCell() }
         
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             
-            detailCell.setValue(title: tableTitleName[indexPath.row],
-                                info: data.title)
-            
-        } else if indexPath.row == 1 {
+            detailCell.setValue(
+                title: tableTitleName[indexPath.row],
+                info: data.title)
+        case 1:
             
             detailCell.setValue(
                 title: tableTitleName[indexPath.row],
                 info: data.address)
             
-        } else if indexPath.row == 2 {
+        case 2:
             
             detailCell.setValue(
                 title: tableTitleName[indexPath.row],
                 info: data.info ?? "")
             
-        } else {
-            
+        default:
             detailCell.setValue(
                 title: tableTitleName[indexPath.row],
                 info: data.introduction)
         }
-
+    
         return detailCell
     }
     
@@ -76,6 +85,14 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UIScreen.main.bounds.height / 3
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
     }
     
 }
