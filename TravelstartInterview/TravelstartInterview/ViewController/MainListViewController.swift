@@ -140,7 +140,7 @@ extension MainListViewController: MainTouristListViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 10
+        return 8
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
@@ -179,13 +179,11 @@ extension MainListViewController: MainTouristTableViewCellDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let detailVC = storyboard.instantiateViewController(
-            identifier:String(describing: DetailViewController.self)) as? DetailViewController else { return }
+            identifier: String(describing: DetailViewController.self)) as? DetailViewController else { return }
         
-        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        self.navigationItem.backBarButtonItem = item
+        detailVC.detailTouristData = self.touristListData[collectionView.tag]
         
         show(detailVC, sender: nil)
-        print("tapImage")
         
     }
     
