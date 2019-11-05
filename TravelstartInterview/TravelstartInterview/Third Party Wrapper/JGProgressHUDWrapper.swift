@@ -23,11 +23,11 @@ class ProgressHUD {
 
     let hud = JGProgressHUD(style: .dark)
 
-    var view: UIView {
-
-         return AppDelegate.shared.window!.rootViewController!.view
-        
-    }
+//    var view: UIView {
+//
+//         return AppDelegate.shared.window!.rootViewController!.view
+//
+//    }
 
     static func show(type: HUDType) {
 
@@ -58,7 +58,7 @@ class ProgressHUD {
 
         shared.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
 
-        shared.hud.show(in: shared.view)
+//        shared.hud.show(in: shared.view)
 
         shared.hud.dismiss(afterDelay: 1.5)
     }
@@ -78,7 +78,7 @@ class ProgressHUD {
 
         shared.hud.indicatorView = JGProgressHUDErrorIndicatorView()
 
-        shared.hud.show(in: shared.view)
+//        shared.hud.show(in: shared.view)
 
         shared.hud.dismiss(afterDelay: 1.5)
     }
@@ -98,7 +98,7 @@ class ProgressHUD {
 
         shared.hud.textLabel.text = "Loading"
 
-        shared.hud.show(in: shared.view)
+//        shared.hud.show(in: shared.view)
     }
 
     static func dismiss() {

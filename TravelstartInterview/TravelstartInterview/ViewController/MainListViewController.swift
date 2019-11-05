@@ -66,12 +66,12 @@ class MainListViewController: UIViewController {
             
             if path.status == .satisfied {
                 
-                //                ProgressHUD.showSuccess()
+                ProgressHUD.showSuccess()
                 print("connected")
                 
             } else {
                 
-                //                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
+                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
                 
                 print("no connection")
                 
@@ -134,7 +134,7 @@ extension MainListViewController: MainTouristTableViewCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return touristListData[section].photoURL.count
+        return touristListData[collectionView.tag].photoURL.count
 
     }
     
