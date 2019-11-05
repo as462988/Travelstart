@@ -18,3 +18,6 @@ API Resource - [臺北市臺北旅遊網-景點資料(中文)](https://data.taip
 #### Detail Screen
 1. put Images set on the top and can be scrolled horizontally like page view
 2. add title, description, address, information...etc
+
+### C. Design :
+<img src="https://github.com/as462988/Travelstart/blob/develop/TravelstartInterview/%E8%A8%AD%E8%A8%88%E6%A8%A3%E5%BC%8F.png" width="800" height="600"/>
