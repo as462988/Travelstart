@@ -115,4 +115,3 @@ class ProgressHUD {
         shared.hud.dismiss()
     }
 }
-

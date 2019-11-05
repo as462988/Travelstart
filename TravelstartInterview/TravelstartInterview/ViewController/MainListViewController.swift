@@ -11,6 +11,8 @@ import Network
 
 class MainListViewController: UIViewController {
     
+    var errorMessage: String = "目前讀取不到資料，請稍後再試"
+    
     @IBOutlet weak var mainListView: MainTouristListView! {
         
         didSet {
@@ -49,22 +51,27 @@ class MainListViewController: UIViewController {
                 self?.touristListData += data.result.results
                 
             case .failure(let error):
+                                
+//                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
                 
                 print("Error:\(error)")
-                
+
             }
         }
     }
     
     func checkNetwork() {
         
-        monitor.pathUpdateHandler = { path in
+        monitor.pathUpdateHandler = { [weak self] path in
             
              if path.status == .satisfied {
                 
+//                ProgressHUD.showSuccess()
                 print("connected")
                 
              } else {
+                
+//                ProgressHUD.showFailure(text: self?.errorMessage ?? "error")
                 
                 print("no connection")
                 
@@ -76,10 +83,14 @@ class MainListViewController: UIViewController {
 }
 
 extension MainListViewController: MainTouristListViewDelegate, MainTouristTableViewCellDelegate {
-
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return touristListData.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return touristListData.count
+        return 1
 
     }
     
@@ -102,6 +113,21 @@ extension MainListViewController: MainTouristListViewDelegate, MainTouristTableV
             tag: indexPath.row)
         
         return mainCell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView()
+        
+        headerView.backgroundColor = .lightGray
+        headerView.alpha = 0.5
+
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
