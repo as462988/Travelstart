@@ -62,12 +62,12 @@ struct PhotoURL {
 
         for number in 1..<photoArray.count {
             
-            if photoArray[number].contains(".mp3") || photoArray[number].contains(".flv") {
+            if photoArray[number].contains(".jpg") || photoArray[number].contains(".JPG") {
 
-                continue
+                newPhotoArray.append("http:" + photoArray[number])
             }
-                
-            newPhotoArray.append("http:" + photoArray[number])
+//
+//            newPhotoArray.append("http:" + photoArray[number])
         }
 
         return newPhotoArray

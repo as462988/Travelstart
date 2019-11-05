@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-106" y="199"/>
         </scene>
-        <!--Main List View Controller-->
+        <!--台北市熱門景點-->
         <scene sceneID="QZu-8k-g7X">
             <objects>
                 <viewController id="QuX-UZ-Aep" customClass="MainListViewController" customModule="TravelstartInterview" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ui7-Tp-f9E" customClass="MainTouristListView" customModule="TravelstartInterview" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5RH-fC-2a3">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5RH-fC-2a3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
@@ -52,7 +52,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xT-Rs-49b">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xT-Rs-49b">
                                                             <rect key="frame" x="20" y="39" width="374" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -135,7 +135,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="puG-Lc-ouT"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5yw-A2-Z5j"/>
+                    <navigationItem key="navigationItem" title="台北市熱門景點" id="5yw-A2-Z5j"/>
                     <connections>
                         <outlet property="mainListView" destination="Ui7-Tp-f9E" id="8XL-oL-Ghj"/>
                     </connections>

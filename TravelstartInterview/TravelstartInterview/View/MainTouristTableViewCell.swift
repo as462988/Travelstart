@@ -8,11 +8,33 @@
 
 import UIKit
 
+protocol MainTouristTableViewCellDelegate: UICollectionViewDelegate, UICollectionViewDataSource, AnyObject {
+    
+}
+
 class MainTouristTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var imageCollectionView: UICollectionView! {
+        
+        didSet {
+            
+            imageCollectionView.delegate = self.delegate
+            imageCollectionView.dataSource = self.delegate
+            
+        }
+    }
+    
+    weak var delegate: MainTouristTableViewCellDelegate? {
+        
+        didSet {
+            
+            imageCollectionView.delegate = self.delegate
+            imageCollectionView.dataSource = self.delegate
+        }
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
