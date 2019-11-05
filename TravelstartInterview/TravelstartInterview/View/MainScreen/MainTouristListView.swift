@@ -14,12 +14,12 @@ protocol MainTouristListViewDelegate: UITableViewDelegate, UITableViewDataSource
 
 class MainTouristListView: UIView {
     
-    @IBOutlet weak var mainTouristViewTabelView: UITableView! {
+    @IBOutlet weak var mainTouristViewTableView: UITableView! {
         
         didSet {
             
-            mainTouristViewTabelView.delegate = self.delegate
-            mainTouristViewTabelView.dataSource = self.delegate
+            mainTouristViewTableView.delegate = self.delegate
+            mainTouristViewTableView.dataSource = self.delegate
             
         }
     }
@@ -28,10 +28,10 @@ class MainTouristListView: UIView {
         
         didSet {
             
-            guard let mainTouristViewTabelView = mainTouristViewTabelView else { return }
+            guard let mainTouristViewTableView = mainTouristViewTableView else { return }
             
-            mainTouristViewTabelView.delegate = self.delegate
-            mainTouristViewTabelView.dataSource = self.delegate
+            mainTouristViewTableView.delegate = self.delegate
+            mainTouristViewTableView.dataSource = self.delegate
         }
     }
     
