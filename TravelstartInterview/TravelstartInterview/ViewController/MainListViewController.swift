@@ -128,10 +128,19 @@ extension MainListViewController: MainTouristListViewDelegate {
         
         return 10
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
+//    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }
 
 extension MainListViewController: MainTouristTableViewCellDelegate {
     
+    // MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return touristListData[collectionView.tag].photoURL.count
@@ -153,7 +162,11 @@ extension MainListViewController: MainTouristTableViewCellDelegate {
         return mainImageCell
     }
     
+    // MARK: UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        
+        print("tapImage")
         
     }
     
