@@ -132,7 +132,7 @@ extension MainListViewController: MainTouristListViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        tableView.deselectRow(at: indexPath, animated: false)
 //    }
-//    
+//
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -166,6 +166,12 @@ extension MainListViewController: MainTouristTableViewCellDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let detailVC = storyboard.instantiateViewController(
+            identifier:String(describing: DetailViewController.self)) as? DetailViewController else { return }
+        
+        show(detailVC, sender: nil)
         print("tapImage")
         
     }
