@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		098A6BBF236B341C009DABAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BBE236B341C009DABAB /* AppDelegate.swift */; };
+		098A6BC1236B341C009DABAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BC0236B341C009DABAB /* SceneDelegate.swift */; };
+		098A6BC3236B341C009DABAB /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BC2236B341C009DABAB /* MainListViewController.swift */; };
+		098A6BC6236B341C009DABAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098A6BC4236B341C009DABAB /* Main.storyboard */; };
+		098A6BC8236B341E009DABAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098A6BC7236B341E009DABAB /* Assets.xcassets */; };
+		098A6BCB236B341E009DABAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 098A6BC9236B341E009DABAB /* LaunchScreen.storyboard */; };
+		098A6BD6236B341F009DABAB /* TravelstartInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BD5236B341F009DABAB /* TravelstartInterviewTests.swift */; };
+		098A6BE723704565009DABAB /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BE623704565009DABAB /* HTTPClient.swift */; };
+		098A6BE923704866009DABAB /* TouristRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BE823704866009DABAB /* TouristRequest.swift */; };
+		098A6BEE23704A52009DABAB /* Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BED23704A52009DABAB /* Kingfisher.swift */; };
+		098A6BF023704C28009DABAB /* TouristListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BEF23704C28009DABAB /* TouristListData.swift */; };
+		098A6BF423705969009DABAB /* MainTouristTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BF323705969009DABAB /* MainTouristTableViewCell.swift */; };
+		098A6BFA237152CD009DABAB /* MainTouristListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BF9237152CD009DABAB /* MainTouristListView.swift */; };
+		098A6BFC237155B5009DABAB /* MainTouristImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BFB237155B5009DABAB /* MainTouristImageCollectionViewCell.swift */; };
+		098A6BFE2371574B009DABAB /* TouristProvider .swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BFD2371574B009DABAB /* TouristProvider .swift */; };
+		098A6C0023717AE5009DABAB /* JGProgressHUDWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6BFF23717AE5009DABAB /* JGProgressHUDWrapper.swift */; };
+		098A6C022371B842009DABAB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098A6C012371B842009DABAB /* DetailViewController.swift */; };
+		877241FDE947996C0FB8FE44 /* Pods_TravelstartInterview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134CA50DDE2140D76CF2CD9C /* Pods_TravelstartInterview.framework */; };
+		E6BA635306116B99FDC707EF /* Pods_TravelstartInterviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A25AFC5EC5AB782F1A411EF /* Pods_TravelstartInterviewTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		098A6BD2236B341F009DABAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 098A6BB3236B341C009DABAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 098A6BBA236B341C009DABAB;
+			remoteInfo = TravelstartInterview;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		098A6BBB236B341C009DABAB /* TravelstartInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelstartInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		098A6BBE236B341C009DABAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		098A6BC0236B341C009DABAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		098A6BC2236B341C009DABAB /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListViewController.swift; sourceTree = "<group>"; };
+		098A6BC5236B341C009DABAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		098A6BC7236B341E009DABAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		098A6BCA236B341E009DABAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		098A6BCC236B341E009DABAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		098A6BD1236B341F009DABAB /* TravelstartInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelstartInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		098A6BD5236B341F009DABAB /* TravelstartInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelstartInterviewTests.swift; sourceTree = "<group>"; };
+		098A6BD7236B341F009DABAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		098A6BE623704565009DABAB /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		098A6BE823704866009DABAB /* TouristRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristRequest.swift; sourceTree = "<group>"; };
+		098A6BED23704A52009DABAB /* Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingfisher.swift; sourceTree = "<group>"; };
+		098A6BEF23704C28009DABAB /* TouristListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouristListData.swift; sourceTree = "<group>"; };
+		098A6BF323705969009DABAB /* MainTouristTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTouristTableViewCell.swift; sourceTree = "<group>"; };
+		098A6BF9237152CD009DABAB /* MainTouristListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTouristListView.swift; sourceTree = "<group>"; };
+		098A6BFB237155B5009DABAB /* MainTouristImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTouristImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		098A6BFD2371574B009DABAB /* TouristProvider .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TouristProvider .swift"; sourceTree = "<group>"; };
+		098A6BFF23717AE5009DABAB /* JGProgressHUDWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGProgressHUDWrapper.swift; sourceTree = "<group>"; };
+		098A6C012371B842009DABAB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		134CA50DDE2140D76CF2CD9C /* Pods_TravelstartInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelstartInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CD2645D9AF9EA86257C5BE3 /* Pods-TravelstartInterviewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelstartInterviewTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelstartInterviewTests/Pods-TravelstartInterviewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A25AFC5EC5AB782F1A411EF /* Pods_TravelstartInterviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelstartInterviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84969B130ED14E23B7D0CA44 /* Pods-TravelstartInterviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelstartInterviewTests.release.xcconfig"; path = "Target Support Files/Pods-TravelstartInterviewTests/Pods-TravelstartInterviewTests.release.xcconfig"; sourceTree = "<group>"; };
+		C755152F50E04D6C73F5C128 /* Pods-TravelstartInterview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelstartInterview.release.xcconfig"; path = "Target Support Files/Pods-TravelstartInterview/Pods-TravelstartInterview.release.xcconfig"; sourceTree = "<group>"; };
+		E9BE1383947D626E66615421 /* Pods-TravelstartInterview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelstartInterview.debug.xcconfig"; path = "Target Support Files/Pods-TravelstartInterview/Pods-TravelstartInterview.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		098A6BB8236B341C009DABAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877241FDE947996C0FB8FE44 /* Pods_TravelstartInterview.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		098A6BCE236B341F009DABAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6BA635306116B99FDC707EF /* Pods_TravelstartInterviewTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		098A6BB2236B341C009DABAB = {
+			isa = PBXGroup;
+			children = (
+				098A6BBD236B341C009DABAB /* TravelstartInterview */,
+				098A6BD4236B341F009DABAB /* TravelstartInterviewTests */,
+				098A6BBC236B341C009DABAB /* Products */,
+				4F91C96CFFC412A2BDFB8A90 /* Pods */,
+				5181BFD7D0D7F2071056D9B1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		098A6BBC236B341C009DABAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BBB236B341C009DABAB /* TravelstartInterview.app */,
+				098A6BD1236B341F009DABAB /* TravelstartInterviewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		098A6BBD236B341C009DABAB /* TravelstartInterview */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BBE236B341C009DABAB /* AppDelegate.swift */,
+				098A6BC0236B341C009DABAB /* SceneDelegate.swift */,
+				098A6BEC23704A44009DABAB /* Third Party Wrapper */,
+				098A6BE1237040C7009DABAB /* Model */,
+				098A6BE2237040DD009DABAB /* View */,
+				098A6BE0237040BC009DABAB /* ViewController */,
+				098A6BC7236B341E009DABAB /* Assets.xcassets */,
+				098A6BC9236B341E009DABAB /* LaunchScreen.storyboard */,
+				098A6BCC236B341E009DABAB /* Info.plist */,
+			);
+			path = TravelstartInterview;
+			sourceTree = "<group>";
+		};
+		098A6BD4236B341F009DABAB /* TravelstartInterviewTests */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BD5236B341F009DABAB /* TravelstartInterviewTests.swift */,
+				098A6BD7236B341F009DABAB /* Info.plist */,
+			);
+			path = TravelstartInterviewTests;
+			sourceTree = "<group>";
+		};
+		098A6BE0237040BC009DABAB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BC2236B341C009DABAB /* MainListViewController.swift */,
+				098A6C012371B842009DABAB /* DetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		098A6BE1237040C7009DABAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BEF23704C28009DABAB /* TouristListData.swift */,
+				098A6BE823704866009DABAB /* TouristRequest.swift */,
+				098A6BE623704565009DABAB /* HTTPClient.swift */,
+				098A6BFD2371574B009DABAB /* TouristProvider .swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		098A6BE2237040DD009DABAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BC4236B341C009DABAB /* Main.storyboard */,
+				098A6BF9237152CD009DABAB /* MainTouristListView.swift */,
+				098A6BF323705969009DABAB /* MainTouristTableViewCell.swift */,
+				098A6BFB237155B5009DABAB /* MainTouristImageCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		098A6BEC23704A44009DABAB /* Third Party Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				098A6BED23704A52009DABAB /* Kingfisher.swift */,
+				098A6BFF23717AE5009DABAB /* JGProgressHUDWrapper.swift */,
+			);
+			path = "Third Party Wrapper";
+			sourceTree = "<group>";
+		};
+		4F91C96CFFC412A2BDFB8A90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9BE1383947D626E66615421 /* Pods-TravelstartInterview.debug.xcconfig */,
+				C755152F50E04D6C73F5C128 /* Pods-TravelstartInterview.release.xcconfig */,
+				3CD2645D9AF9EA86257C5BE3 /* Pods-TravelstartInterviewTests.debug.xcconfig */,
+				84969B130ED14E23B7D0CA44 /* Pods-TravelstartInterviewTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5181BFD7D0D7F2071056D9B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				134CA50DDE2140D76CF2CD9C /* Pods_TravelstartInterview.framework */,
+				5A25AFC5EC5AB782F1A411EF /* Pods_TravelstartInterviewTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		098A6BBA236B341C009DABAB /* TravelstartInterview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 098A6BDA236B341F009DABAB /* Build configuration list for PBXNativeTarget "TravelstartInterview" */;
+			buildPhases = (
+				2AADC689432E9BCC5E446B50 /* [CP] Check Pods Manifest.lock */,
+				098A6BB7236B341C009DABAB /* Sources */,
+				098A6BB8236B341C009DABAB /* Frameworks */,
+				098A6BB9236B341C009DABAB /* Resources */,
+				B27E57B24F6A3A3A4680EEF7 /* [CP] Embed Pods Frameworks */,
+				098A6BE3237042BB009DABAB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TravelstartInterview;
+			productName = TravelstartInterview;
+			productReference = 098A6BBB236B341C009DABAB /* TravelstartInterview.app */;
+			productType = "com.apple.product-type.application";
+		};
+		098A6BD0236B341F009DABAB /* TravelstartInterviewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 098A6BDD236B341F009DABAB /* Build configuration list for PBXNativeTarget "TravelstartInterviewTests" */;
+			buildPhases = (
+				9897487B6E25C53EC9A6ED32 /* [CP] Check Pods Manifest.lock */,
+				098A6BCD236B341F009DABAB /* Sources */,
+				098A6BCE236B341F009DABAB /* Frameworks */,
+				098A6BCF236B341F009DABAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				098A6BD3236B341F009DABAB /* PBXTargetDependency */,
+			);
+			name = TravelstartInterviewTests;
+			productName = TravelstartInterviewTests;
+			productReference = 098A6BD1236B341F009DABAB /* TravelstartInterviewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		098A6BB3236B341C009DABAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Yueh-chen Hsu";
+				TargetAttributes = {
+					098A6BBA236B341C009DABAB = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					098A6BD0236B341F009DABAB = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 098A6BBA236B341C009DABAB;
+					};
+				};
+			};
+			buildConfigurationList = 098A6BB6236B341C009DABAB /* Build configuration list for PBXProject "TravelstartInterview" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 098A6BB2236B341C009DABAB;
+			productRefGroup = 098A6BBC236B341C009DABAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				098A6BBA236B341C009DABAB /* TravelstartInterview */,
+				098A6BD0236B341F009DABAB /* TravelstartInterviewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		098A6BB9236B341C009DABAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098A6BCB236B341E009DABAB /* LaunchScreen.storyboard in Resources */,
+				098A6BC8236B341E009DABAB /* Assets.xcassets in Resources */,
+				098A6BC6236B341C009DABAB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		098A6BCF236B341F009DABAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		098A6BE3237042BB009DABAB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		2AADC689432E9BCC5E446B50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelstartInterview-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9897487B6E25C53EC9A6ED32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelstartInterviewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B27E57B24F6A3A3A4680EEF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelstartInterview/Pods-TravelstartInterview-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelstartInterview/Pods-TravelstartInterview-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelstartInterview/Pods-TravelstartInterview-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		098A6BB7236B341C009DABAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098A6C022371B842009DABAB /* DetailViewController.swift in Sources */,
+				098A6BC3236B341C009DABAB /* MainListViewController.swift in Sources */,
+				098A6BFE2371574B009DABAB /* TouristProvider .swift in Sources */,
+				098A6BE923704866009DABAB /* TouristRequest.swift in Sources */,
+				098A6BF423705969009DABAB /* MainTouristTableViewCell.swift in Sources */,
+				098A6BEE23704A52009DABAB /* Kingfisher.swift in Sources */,
+				098A6C0023717AE5009DABAB /* JGProgressHUDWrapper.swift in Sources */,
+				098A6BF023704C28009DABAB /* TouristListData.swift in Sources */,
+				098A6BFC237155B5009DABAB /* MainTouristImageCollectionViewCell.swift in Sources */,
+				098A6BBF236B341C009DABAB /* AppDelegate.swift in Sources */,
+				098A6BFA237152CD009DABAB /* MainTouristListView.swift in Sources */,
+				098A6BE723704565009DABAB /* HTTPClient.swift in Sources */,
+				098A6BC1236B341C009DABAB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		098A6BCD236B341F009DABAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098A6BD6236B341F009DABAB /* TravelstartInterviewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		098A6BD3236B341F009DABAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 098A6BBA236B341C009DABAB /* TravelstartInterview */;
+			targetProxy = 098A6BD2236B341F009DABAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		098A6BC4236B341C009DABAB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				098A6BC5236B341C009DABAB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		098A6BC9236B341E009DABAB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				098A6BCA236B341E009DABAB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		098A6BD8236B341F009DABAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		098A6BD9236B341F009DABAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		098A6BDB236B341F009DABAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9BE1383947D626E66615421 /* Pods-TravelstartInterview.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KQ5YU2R5VY;
+				INFOPLIST_FILE = TravelstartInterview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = myCompany.TravelstartInterview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		098A6BDC236B341F009DABAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C755152F50E04D6C73F5C128 /* Pods-TravelstartInterview.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KQ5YU2R5VY;
+				INFOPLIST_FILE = TravelstartInterview/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = myCompany.TravelstartInterview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		098A6BDE236B341F009DABAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CD2645D9AF9EA86257C5BE3 /* Pods-TravelstartInterviewTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KQ5YU2R5VY;
+				INFOPLIST_FILE = TravelstartInterviewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = myCompany.TravelstartInterviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelstartInterview.app/TravelstartInterview";
+			};
+			name = Debug;
+		};
+		098A6BDF236B341F009DABAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84969B130ED14E23B7D0CA44 /* Pods-TravelstartInterviewTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KQ5YU2R5VY;
+				INFOPLIST_FILE = TravelstartInterviewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = myCompany.TravelstartInterviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelstartInterview.app/TravelstartInterview";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		098A6BB6236B341C009DABAB /* Build configuration list for PBXProject "TravelstartInterview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098A6BD8236B341F009DABAB /* Debug */,
+				098A6BD9236B341F009DABAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		098A6BDA236B341F009DABAB /* Build configuration list for PBXNativeTarget "TravelstartInterview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098A6BDB236B341F009DABAB /* Debug */,
+				098A6BDC236B341F009DABAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		098A6BDD236B341F009DABAB /* Build configuration list for PBXNativeTarget "TravelstartInterviewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				098A6BDE236B341F009DABAB /* Debug */,
+				098A6BDF236B341F009DABAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 098A6BB3236B341C009DABAB /* Project object */;
+}
