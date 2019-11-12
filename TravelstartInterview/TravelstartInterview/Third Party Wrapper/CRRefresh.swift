@@ -26,12 +26,12 @@ extension UITableView {
         }
     }
     
-    func resetNoMore(){
+    func resetNoMore() {
         self.cr.resetNoMore()
     }
     
-    func stopLoadingMore() {
-        
+    func endLoadingMore() {
+        self.cr.endHeaderRefresh()
         self.cr.endLoadingMore()
         self.reloadData()
     }

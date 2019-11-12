@@ -37,25 +37,21 @@ class MainListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         checkNetwork()
         setupNavigationBar()
-        refresh()
+        setupRefresher()
     }
     
-    func refresh() {
-        
-        guard let mainTableView = mainListView.mainTouristViewTableView else { return }
-        
-        mainTableView.addHeadRefresh {
-            
+    func setupRefresher() {
+        //宣告加入header loading refresh, 並且宣告他的方法
+        mainListView.mainTouristViewTableView.addHeadRefresh {
             self.touristListData = []
             self.request = TouristRequest(offset: 0, limit: 10)
-            mainTableView.resetNoMore()
+            self.mainListView.mainTouristViewTableView.resetNoMore()
             self.fetchData()
         }
-        
-        mainTableView.addFootRefresh {
+        //宣告加入footer loading refresh, 並且宣告他的方法
+        mainListView.mainTouristViewTableView.addFootRefresh {
             self.fetchData()
         }
     }
@@ -65,13 +61,22 @@ class MainListViewController: UIViewController {
         if networkIsSuccess {
             
             touristProvider.fetchData(request: request) {[weak self] (result) in
+                guard let mainTableView = self?.mainListView.mainTouristViewTableView else { return }
+                
+                DispatchQueue.main.async {
+                    
+                    mainTableView.endLoadingMore()
+//                    mainTableView.cr.endHeaderRefresh()
+//                    mainTableView.cr.endLoadingMore()
+                }
                 
                 switch result {
                     
                 case.success(let data):
                     
-                    if data.result.results.count == self?.touristListData.count {
+                    if data.result.results.count == 0 {
                         self?.mainListView.mainTouristViewTableView.noticeNoMoreData()
+                        return
                     }
                     
                     if data.result.results.count >= 0 {
@@ -79,8 +84,7 @@ class MainListViewController: UIViewController {
                         self?.touristListData += data.result.results
                         
                         DispatchQueue.main.async {
-                            self?.mainListView.mainTouristViewTableView.stopLoadingMore()
-                            
+                            self?.mainListView.mainTouristViewTableView.reloadData()
                         }
                         
                     }
