@@ -15,6 +15,7 @@ class DetailPageHeaderView: UIView, UIScrollViewDelegate {
         let fullScreen = UIScreen.main.bounds
         
         init(numberOfImage: Int, images: [String]) {
+            
             super .init(frame: CGRect.zero)
             setupScrollLViewLayout(number: numberOfImage)
             showImage(number: numberOfImage, images: images)
@@ -74,7 +75,12 @@ class DetailPageHeaderView: UIView, UIScrollViewDelegate {
             
             let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
             
-            pageControl.anchor(top: nil, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: nil, padding: padding, size: .zero)
+            pageControl.anchor(top: nil,
+                               leading: self.leadingAnchor,
+                               bottom: self.bottomAnchor,
+                               trailing: nil,
+                               padding: padding,
+                               size: .zero)
             
             pageControl.addTarget(self, action: #selector (pageChanged(sender:)), for: .valueChanged)
             

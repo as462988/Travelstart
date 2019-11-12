@@ -52,27 +52,29 @@ extension DetailViewController: UITableViewDataSource {
         
         guard let data = detailTouristData else { return UITableViewCell() }
         
+        let title = tableTitleName[indexPath.row]
+        
         switch indexPath.row {
         case 0:
             
             detailCell.setValue(
-                title: tableTitleName[indexPath.row],
+                title: title,
                 info: data.title)
         case 1:
             
             detailCell.setValue(
-                title: tableTitleName[indexPath.row],
+                title: title,
                 info: data.address)
             
         case 2:
             
             detailCell.setValue(
-                title: tableTitleName[indexPath.row],
+                title: title,
                 info: data.info ?? "")
             
         default:
             detailCell.setValue(
-                title: tableTitleName[indexPath.row],
+                title: title,
                 info: data.introduction)
         }
     
